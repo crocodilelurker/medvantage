@@ -1,11 +1,11 @@
+'use client';
 import Header from "@/components/landing/Header";
-import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Home() {
   const user= {
-    type:"pa"
+    type:"patient"
   };
   const router= useRouter();
 
@@ -21,7 +21,7 @@ export default function Home() {
   }
   return (
     <div className="min-h-screen bg-white"> 
-      <Header showDashboardNav={false}/>
+      <Header showDashboardNav={true}/>
     </div>
   );
 }
