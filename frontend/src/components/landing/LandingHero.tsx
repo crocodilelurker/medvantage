@@ -1,0 +1,42 @@
+import React from 'react'
+import { Button } from '../ui/button'
+import Link from 'next/link'
+
+const LandingHero = () => {
+    return (
+        <section className='py-20 px-4 bg-gradient-to-b from-blue-50 to-white '>
+            <div className='container mx-auto text-center'>
+                <h1 className='text-5xl md:text-6xl font-bold text-blue-900 leading-tight mb-6'>
+                    The place where <br></br>
+                    <span className='text-blue-900'>
+                        doctors listen to you
+                    </span>
+                </h1>
+                <p className='text-xl text-gray-600 mb-8 max-w-2xl mx-auto font-medium mt-5'>
+                    Online primary care that's affordable with or without insurance. Quality healthcare, accessible anytime, anywhere.
+                </p>
+                <div className='flex flex-col sm:flex-row gap-4 justify-center mb-12 '>
+                        <Button size='lg' className='bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-500 hover:to-blue-800 rounded-full px-8 py-3 text-lg'>
+                            Book a video visit
+                        </Button>
+                        <Link href={'/login/doctor'}>
+                            <Button size='lg' variant='outline' className='w-full border-blue-600 text-blue-600 hover:bg-blue-50 rounded-full px-8 py-3 text-lg'>
+                            Login as a doctor
+                        </Button>
+                        </Link>
+                </div>
+                {/* categories */}
+                <section className='py-6'>
+                        <div className='container mx-auto px-4' >
+                            <div className='flex justify-center items-center overflow-x-auto gap-5 pb-2 scrollbar-hide mx-auto'>
+                                
+                            </div>
+                        </div>
+                </section>
+
+            </div>
+        </section>
+    )
+}
+
+export default LandingHero

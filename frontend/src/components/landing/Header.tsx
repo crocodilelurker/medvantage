@@ -1,11 +1,11 @@
 'use client';
-import { Bell, Calendar, LayoutDashboard, Stethoscope } from 'lucide-react';
+import { Bell, Calendar, LayoutDashboard, Settings, Stethoscope, User } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import { usePathname } from 'next/navigation';
 import React from 'react'
 import { Badge } from '../ui/badge';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '../ui/dropdown-menu';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '../ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 
 interface HeaderProps {
@@ -20,7 +20,9 @@ interface NavigationItem {
 const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
     const user = {
         type: 'doctor',
-        name: 'POGO'
+        name: 'POGO',
+        profileImage: '110HEX',
+        email: 'swagat@gma.com'
     }
 
     const isAuthenticated = false;
@@ -93,9 +95,9 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
                         </Button>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant = 'ghost' className='flex items-center px-2 space-x-2'>
+                                <Button variant='ghost' className='flex items-center px-2 space-x-2'>
                                     <Avatar className='w-8 h-8'>
-                                        <AvatarImage src= {user?.profileImage} alt={user?.name}>
+                                        <AvatarImage src={user?.profileImage} alt={user?.name}>
                                         </AvatarImage>
                                         <AvatarFallback className='bg-blue-700 text-blue-600 text-sm font-semibold'>{user.name.charAt(0)?.toUpperCase()}</AvatarFallback>
                                     </Avatar>
@@ -106,6 +108,37 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align='end' className='w-56'>
+                                <DropdownMenuLabel>
+                                    <div className='flex items-center space-x-2'>
+                                        <Avatar className='w-8 h-8'>
+                                            <AvatarImage src={user?.profileImage} alt={user?.name}>
+                                            </AvatarImage>
+                                            <AvatarFallback className='bg-blue-700 text-blue-600 '>{user.name.charAt(0)?.toUpperCase()}</AvatarFallback>
+                                        </Avatar>
+
+                                        <div className='flex-1 min-w-0'>
+                                            <p className='font-medium truncate'>{user.name}</p>
+                                            <p className='text-sm text-gray-500 truncate max-w-[140px]'>{user?.email}</p>
+                                        </div>
+                                    </div>
+                                </DropdownMenuLabel>
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem asChild>
+                                    <Link href={`/${user.type}/profile`} className='flex items-center'>
+                                        <User className='w-4 h-4 mr-2' />
+                                        Profile
+                                    </Link>
+                                </DropdownMenuItem>
+
+
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem asChild>
+                                    <Link href={`/${user.type}/settings`} className='flex items-center'>
+                                        <Settings className='w-4 h-4 mr-2' />
+                                        Settings
+                                    </Link>
+                                </DropdownMenuItem>
+
 
                             </DropdownMenuContent>
                         </DropdownMenu>
@@ -120,7 +153,7 @@ const Header: React.FC<HeaderProps> = ({ showDashboardNav = false }) => {
                             </Link>
 
                             <Link href='signup/patient' className='hidden md:block'>
-                                <Button variant='ghost' className=' text-white bg-gradient-to-r from-blue-600 to-blue-700 font-medium hover:from-blue-700 hover:to-blue-800 rounded-full px-6'>
+                                <Button className=' text-white bg-gradient-to-r from-blue-600 to-blue-700 font-medium hover:from-blue-700 hover:to-blue-800 rounded-full px-6'>
                                     Book Consultancy
                                 </Button>
                             </Link>
