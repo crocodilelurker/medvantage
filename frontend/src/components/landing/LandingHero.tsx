@@ -4,10 +4,9 @@ import Link from 'next/link'
 import { healthcareCategories } from '@/lib/constant'
 
 const LandingHero = () => {
-    const handleCategoryClick = (categoryTitle:string) => 
-        {
+    const handleCategoryClick = (categoryTitle: string) => {
 
-        } 
+    }
     return (
         <section className='py-20 px-4 bg-gradient-to-b from-blue-50 to-white '>
             <div className='container mx-auto text-center'>
@@ -21,40 +20,60 @@ const LandingHero = () => {
                     Online primary care that's affordable with or without insurance. Quality healthcare, accessible anytime, anywhere.
                 </p>
                 <div className='flex flex-col sm:flex-row gap-4 justify-center mb-12 '>
-                        <Button size='lg' className='bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-500 hover:to-blue-800 rounded-full px-8 py-3 text-lg'>
-                            Book a video visit
-                        </Button>
-                        <Link href={'/login/doctor'}>
-                            <Button size='lg' variant='outline' className='w-full border-blue-600 text-blue-600 hover:bg-blue-50 rounded-full px-8 py-3 text-lg'>
+                    <Button size='lg' className='bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-500 hover:to-blue-800 rounded-full px-8 py-3 text-lg'>
+                        Book a video visit
+                    </Button>
+                    <Link href={'/login/doctor'}>
+                        <Button size='lg' variant='outline' className='w-full border-blue-600 text-blue-600 hover:bg-blue-50 rounded-full px-8 py-3 text-lg'>
                             Login as a doctor
                         </Button>
-                        </Link>
+                    </Link>
                 </div>
                 {/* categories */}
                 <section className='py-6'>
-                        <div className='container mx-auto px-4' >
-                            <div className='flex justify-center items-center overflow-x-auto gap-5 pb-2 scrollbar-hide mx-auto'>
-                                {healthcareCategories.map((category=>(
-                                    <button 
+                    <div className='container mx-auto px-4' >
+                        <div className='flex justify-center items-center overflow-x-auto gap-5 pb-2 scrollbar-hide mx-auto'>
+                            {healthcareCategories.map((category => (
+                                <button
                                     key={category.id}
                                     onClick={() => handleCategoryClick(category.title)}
                                     className='flex flex-col items-center min-w-[100px] group transition-transform'>
-                                        <div
+                                    <div
                                         className={`w-12 h-12 ${category.color} rounded-2xl flex items-center justify-center mb-2 group-hover:shadow-xl transition-all duration-200`}>
-                                            <svg
+                                        <svg
                                             className='w-6 h-6 text-white' fill='currentColor' viewBox='0 0 24 24'>
-                                                <path d={category.icon}/>
-                                            </svg>
-                                        </div>
-                                        <span className='text-xs font-medium text-center leading-tight text-blue'>
-                                            {category.title}
-                                        </span>
-                                    </button>
-                                )))}
-                            </div>
+                                            <path d={category.icon} />
+                                        </svg>
+                                    </div>
+                                    <span className='text-xs font-medium text-center leading-tight text-blue'>
+                                        {category.title}
+                                    </span>
+                                </button>
+                            )))}
                         </div>
+                    </div>
                 </section>
-                                {/* 14904 */}
+                {/* 14904 */}
+                <div className='flex flex-wrap justify-center items-center gap-8 text-gray-600 text-sm'>
+                    <div className='flex items-center space-x-2'>
+                            <div className='h-2 w-2 bg-green-500 rounded-full'>
+
+                            </div>
+                            <span>500+ Certified Doctors</span>
+                    </div>
+                    <div className='flex items-center space-x-2'>
+                            <div className='h-2 w-2 bg-green-500 rounded-full'>
+
+                            </div>
+                            <span>50000+ Contented Patients</span>
+                    </div>
+                    <div className='flex items-center space-x-2'>
+                            <div className='h-2 w-2 bg-green-500 rounded-full'>
+
+                            </div>
+                            <span>24/7 Available Service</span>
+                    </div>
+                </div>
             </div>
         </section>
     )
