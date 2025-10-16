@@ -1,8 +1,13 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
+import { healthcareCategories } from '@/lib/constant'
 
 const LandingHero = () => {
+    const handleCategoryClick = (categoryTitle:string) => 
+        {
+
+        } 
     return (
         <section className='py-20 px-4 bg-gradient-to-b from-blue-50 to-white '>
             <div className='container mx-auto text-center'>
@@ -29,11 +34,27 @@ const LandingHero = () => {
                 <section className='py-6'>
                         <div className='container mx-auto px-4' >
                             <div className='flex justify-center items-center overflow-x-auto gap-5 pb-2 scrollbar-hide mx-auto'>
-                                
+                                {healthcareCategories.map((category=>(
+                                    <button 
+                                    key={category.id}
+                                    onClick={() => handleCategoryClick(category.title)}
+                                    className='flex flex-col items-center min-w-[100px] group transition-transform'>
+                                        <div
+                                        className={`w-12 h-12 ${category.color} rounded-2xl flex items-center justify-center mb-2 group-hover:shadow-xl transition-all duration-200`}>
+                                            <svg
+                                            className='w-6 h-6 text-white' fill='currentColor' viewBox='0 0 24 24'>
+                                                <path d={category.icon}/>
+                                            </svg>
+                                        </div>
+                                        <span className='text-xs font-medium text-center leading-tight text-blue'>
+                                            {category.title}
+                                        </span>
+                                    </button>
+                                )))}
                             </div>
                         </div>
                 </section>
-
+                                {/* 14904 */}
             </div>
         </section>
     )
