@@ -1,3 +1,5 @@
+
+import { Facebook, Instagram, Linkedin, Twitter, Phone, Mail, MapPin, Video, Clock, FileText } from "lucide-react";
 export const healthcareCategories = [
   {
     id: 'primary-care',
@@ -81,3 +83,114 @@ export const specializations = [
   "Psychiatrist",
   "Ophthalmologist",
 ];
+
+
+export const testimonials = [
+  {
+    rating: 5,
+    text: "Doctor was available right away, listened to my symptoms and prescribed the right medication. He made sure to explain the medicines and that was it. Very fast and easy.",
+    author: "Pat J.",
+    location: "From Texas",
+    bgColor: "bg-chart-1/10"
+  },
+  {
+    rating: 5,
+    text: "The doctor made me feel comfortable right away, very easy to ask about concerns I might have had and great feedback from my doctors.",
+    author: "Patrice P.",
+    location: "From New York",
+    bgColor: "bg-chart-2/10"
+  },
+  {
+    rating: 5,
+    text: "My doctor was very professional, thorough, and careful to ask me numerous relevant questions. She answered my questions not only in a detailed manner, but also in a way I could understand.",
+    author: "Betty M.",
+    location: "From Tennessee",
+    bgColor: "bg-chart-4/10"
+  },
+  {
+    rating: 5,
+    text: "It was quick & easy to book the appointment. I was able to get a PC appointment the next morning... within 12 hours! I connected and got my ongoing meds refilled. It was so nice for me living in a rural community.",
+    author: "Katherine M.",
+    location: "From California",
+    bgColor: "bg-chart-5/10"
+  }
+];
+
+
+
+export const faqs = [
+  {
+    question: "How much does a doctor visit with Medvanatge+ cost?",
+    answer: "With insurance, you pay your copay based on your plan. We accept most plans, including Medvanatge. Without insurance, online doctor visits are $129. You can become a Medvanatge+ member and pay $44/visit. Membership is $55 for three months and $180 for a yearly membership."
+  },
+  {
+    question: "Do you accept health insurance?",
+    answer: "Yes, we accept most major health insurance plans including Medvanatge, BlueCross BlueShield, Aetna, United Healthcare, Cigna, Humana, and many others. We also accept FSA and HSA payments."
+  },
+  {
+    question: "What conditions can Medvanatge+ doctors treat?",
+    answer: "Our doctors can treat a wide range of conditions including cold and flu symptoms, allergies, skin conditions, mental health concerns, chronic condition management, and much more through virtual consultations."
+  },
+  {
+    question: "How quickly can I see a doctor?",
+    answer: "Many of our doctors are available for same-day appointments, and some offer immediate consultations. You can book appointments that fit your schedule, often within hours of your request."
+  }
+];
+
+export const trustLogos = [
+  "Business Insider", "CBS News", "CNBC", "Forbes", "Fortune", "Fox Business",
+  "Healthline", "Inc.", "Men's Health", "TechCrunch", "The New York Times", "WSJ"
+];
+export const contactInfo = [
+  {
+    icon: Phone,
+    text: "1-888-Medvanatge (1-888-633-4227)",
+  },
+  {
+    icon: Mail,
+    text: "support@Medvanatge-plus.com",
+  },
+  {
+    icon: MapPin,
+    text: "Available across India",
+  },
+];
+
+export const footerSections = [
+  {
+    title: "Company",
+    links: [
+      { text: "About Us", href: "/about" },
+      { text: "Support Center", href: "/support" },
+      { text: "Contact Us", href: "/contact" }
+    ]
+  },
+  {
+    title: "For Healthcare",
+    links: [
+      { text: "Join as Doctor", href: "/signup/doctor" },
+      { text: "Doctor Resources", href: "/doctor-resources" },
+    ]
+  },
+  {
+    title: "For Patients",
+    links: [
+      { text: "Find Doctors", href: "/doctors" },
+      { text: "Book Appointment", href: "/signup/patient" },
+    ]
+  },
+  {
+    title: "Legal",
+    links: [
+      { text: "Privacy Policy", href: "/privacy" },
+      { text: "Terms of Service", href: "/terms" },
+    ]
+  }
+];
+
+export const socials = [
+  { name: "twitter", icon: Twitter, url: "https://twitter.com/Medvanatge-plus" },
+  { name: "facebook", icon: Facebook, url: "https://facebook.com/Medvanatge-plus" },
+  { name: "linkedin", icon: Linkedin, url: "https://linkedin.com/company/Medvanatge-plus" },
+  { name: "instagram", icon: Instagram, url: "https://instagram.com/Medvanatge-plus" },
+]

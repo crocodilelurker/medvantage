@@ -2,10 +2,27 @@ import React from 'react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { healthcareCategories } from '@/lib/constant'
+import { useRouter } from 'next/navigation'
 
 const LandingHero = () => {
-    const handleCategoryClick = (categoryTitle: string) => {
 
+    const isAuthenticated = false;
+    const router = useRouter();
+
+    const handleBookConsultation = () => {
+        if (isAuthenticated) {
+            router.push('/doctor-list');
+        } else {
+            router.push('/signup/patient')
+        }
+    }
+
+    const handleCategoryClick = (categoryTitle: string) => {
+        if (isAuthenticated) {
+            router.push(`/doctor-list?category=${categoryTitle}`)
+        } else {
+            router.push('/signup/patient')
+        }
     }
     return (
         <section className='py-20 px-4 bg-gradient-to-b from-blue-50 to-white '>
@@ -20,7 +37,7 @@ const LandingHero = () => {
                     Online primary care that's affordable with or without insurance. Quality healthcare, accessible anytime, anywhere.
                 </p>
                 <div className='flex flex-col sm:flex-row gap-4 justify-center mb-12 '>
-                    <Button size='lg' className='bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-500 hover:to-blue-800 rounded-full px-8 py-3 text-lg'>
+                    <Button  onClick= {handleBookConsultation} size='lg' className='bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-500 hover:to-blue-800 rounded-full px-8 py-3 text-lg'>
                         Book a video visit
                     </Button>
                     <Link href={'/login/doctor'}>
@@ -56,22 +73,22 @@ const LandingHero = () => {
                 {/* 14904 */}
                 <div className='flex flex-wrap justify-center items-center gap-8 text-gray-600 text-sm'>
                     <div className='flex items-center space-x-2'>
-                            <div className='h-2 w-2 bg-green-500 rounded-full'>
+                        <div className='h-2 w-2 bg-green-500 rounded-full'>
 
-                            </div>
-                            <span>500+ Certified Doctors</span>
+                        </div>
+                        <span>500+ Certified Doctors</span>
                     </div>
                     <div className='flex items-center space-x-2'>
-                            <div className='h-2 w-2 bg-green-500 rounded-full'>
+                        <div className='h-2 w-2 bg-green-500 rounded-full'>
 
-                            </div>
-                            <span>50000+ Contented Patients</span>
+                        </div>
+                        <span>50000+ Contented Patients</span>
                     </div>
                     <div className='flex items-center space-x-2'>
-                            <div className='h-2 w-2 bg-green-500 rounded-full'>
+                        <div className='h-2 w-2 bg-green-500 rounded-full'>
 
-                            </div>
-                            <span>24/7 Available Service</span>
+                        </div>
+                        <span>24/7 Available Service</span>
                     </div>
                 </div>
             </div>
